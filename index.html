@@ -407,7 +407,7 @@
                         </div>
                         
                         <input type="hidden" name="_subject" value="New Consultation Request from Mulytics Website">
-                        <input type="hidden" name="_next" value="">
+                        <input type="hidden" name="_next" value="https://mulytics.net?success=true">
                         
                         <button type="submit" class="btn btn-primary btn-large">Send Message</button>
                     </form>
@@ -420,7 +420,7 @@
                         </div>
                         
                         <input type="hidden" name="_subject" value="New Newsletter Subscription from Mulytics Website">
-                        <input type="hidden" name="_next" value="">
+                        <input type="hidden" name="_next" value="https://mulytics.net?newsletter=true">
                         
                         <button type="submit" class="btn btn-secondary">Subscribe</button>
                     </form>
@@ -504,6 +504,18 @@
     <script>
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
+            // Check for success messages in URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                showToast('Consultation request sent successfully! We\'ll get back to you soon.');
+                // Clean up URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+            if (urlParams.get('newsletter') === 'true') {
+                showToast('Successfully subscribed to our newsletter!');
+                // Clean up URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
             const mobileMenu = document.getElementById('mobileMenu');
             
@@ -537,18 +549,71 @@
             
             if (consultationForm) {
                 consultationForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    showToast('Consultation request sent successfully! We\'ll get back to you soon.');
-                    consultationForm.reset();
+                    // Validate form before submission
+                    if (!validateForm(consultationForm)) {
+                        e.preventDefault();
+                        return false;
+                    }
+                    
+                    // Show loading state
+                    const submitBtn = consultationForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Let the form submit naturally to Formspree
+                    // Formspree will handle the response
                 });
             }
             
             if (emailForm) {
                 emailForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    showToast('Successfully subscribed to our newsletter!');
-                    emailForm.reset();
+                    // Validate form before submission
+                    if (!validateForm(emailForm)) {
+                        e.preventDefault();
+                        return false;
+                    }
+                    
+                    // Show loading state
+                    const submitBtn = emailForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Subscribing...';
+                    submitBtn.disabled = true;
+                    
+                    // Let the form submit naturally to Formspree
+                    // Formspree will handle the response
                 });
+            }
+            
+            // Form validation function
+            function validateForm(form) {
+                const requiredFields = form.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = '#e74c3c';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '#3a3a3a';
+                    }
+                });
+                
+                // Email validation
+                const emailFields = form.querySelectorAll('input[type="email"]');
+                emailFields.forEach(field => {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (field.value && !emailRegex.test(field.value)) {
+                        field.style.borderColor = '#e74c3c';
+                        isValid = false;
+                    }
+                });
+                
+                if (!isValid) {
+                    showToast('Please fill in all required fields correctly.');
+                }
+                
+                return isValid;
             }
         });
         
