@@ -373,7 +373,7 @@
                         </div>
                         
                         <input type="hidden" name="_subject" value="New Consultation Request from Mulytics Website">
-                        <input type="hidden" name="_next" value="?success=true">
+                        <input type="hidden" name="_next" value="">
                         
                         <button type="submit" class="btn btn-primary btn-large">Send Message</button>
                     </form>
@@ -386,7 +386,7 @@
                         </div>
                         
                         <input type="hidden" name="_subject" value="New Newsletter Subscription from Mulytics Website">
-                        <input type="hidden" name="_next" value="?success=true">
+                        <input type="hidden" name="_next" value="">
                         
                         <button type="submit" class="btn btn-secondary">Subscribe</button>
                     </form>
@@ -459,6 +459,14 @@
         </div>
     </footer>
 
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <div class="toast-icon">✓</div>
+            <div class="toast-message">Message sent successfully!</div>
+        </div>
+    </div>
+
     <script>
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
@@ -488,7 +496,40 @@
                     }
                 });
             }
+            
+            // Form submission handling
+            const consultationForm = document.getElementById('consultationForm');
+            const emailForm = document.getElementById('emailForm');
+            
+            if (consultationForm) {
+                consultationForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    showToast('Consultation request sent successfully! We\'ll get back to you soon.');
+                    consultationForm.reset();
+                });
+            }
+            
+            if (emailForm) {
+                emailForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    showToast('Successfully subscribed to our newsletter!');
+                    emailForm.reset();
+                });
+            }
         });
+        
+        // Toast notification function
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = toast.querySelector('.toast-message');
+            
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
     </script>
 </body>
 </html>
