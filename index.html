@@ -378,7 +378,7 @@
                 </div>
                 
                 <div class="contact-form-container">
-                    <form class="contact-form" id="consultationForm" action="https://formspree.io/f/myzdvwpo" method="POST">
+                    <form class="contact-form" id="consultationForm">
                         <h3>Schedule Consultation</h3>
                         <div class="form-group">
                             <label for="name">Name *</label>
@@ -407,12 +407,11 @@
                         </div>
                         
                         <input type="hidden" name="_subject" value="New Consultation Request from Mulytics Website">
-                        <input type="hidden" name="_next" value="https://mulytics.net?success=true">
                         
                         <button type="submit" class="btn btn-primary btn-large">Send Message</button>
                     </form>
                     
-                    <form class="contact-form" id="emailForm" action="https://formspree.io/f/myzdvwpo" method="POST">
+                    <form class="contact-form" id="emailForm">
                         <h3>Stay Updated</h3>
                         <div class="form-group">
                             <label for="newsletter-email">Email Address *</label>
@@ -420,7 +419,6 @@
                         </div>
                         
                         <input type="hidden" name="_subject" value="New Newsletter Subscription from Mulytics Website">
-                        <input type="hidden" name="_next" value="https://mulytics.net?newsletter=true">
                         
                         <button type="submit" class="btn btn-secondary">Subscribe</button>
                     </form>
@@ -504,18 +502,6 @@
     <script>
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
-            // Check for success messages in URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('success') === 'true') {
-                showToast('Consultation request sent successfully! We\'ll get back to you soon.');
-                // Clean up URL
-                window.history.replaceState({}, document.title, window.location.pathname);
-            }
-            if (urlParams.get('newsletter') === 'true') {
-                showToast('Successfully subscribed to our newsletter!');
-                // Clean up URL
-                window.history.replaceState({}, document.title, window.location.pathname);
-            }
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
             const mobileMenu = document.getElementById('mobileMenu');
             
@@ -549,9 +535,10 @@
             
             if (consultationForm) {
                 consultationForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent default form submission
+                    
                     // Validate form before submission
                     if (!validateForm(consultationForm)) {
-                        e.preventDefault();
                         return false;
                     }
                     
@@ -561,16 +548,28 @@
                     submitBtn.textContent = 'Sending...';
                     submitBtn.disabled = true;
                     
-                    // Let the form submit naturally to Formspree
-                    // Formspree will handle the response
+                    // Submit via AJAX to Formspree
+                    submitFormToFormspree(consultationForm, 'https://formspree.io/f/myzdvwpo', function(success) {
+                        // Reset button state
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        
+                        if (success) {
+                            showToast('Consultation request sent successfully! We\'ll get back to you soon.');
+                            consultationForm.reset(); // Clear the form
+                        } else {
+                            showToast('Sorry, there was an error sending your message. Please try again.');
+                        }
+                    });
                 });
             }
             
             if (emailForm) {
                 emailForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent default form submission
+                    
                     // Validate form before submission
                     if (!validateForm(emailForm)) {
-                        e.preventDefault();
                         return false;
                     }
                     
@@ -580,8 +579,43 @@
                     submitBtn.textContent = 'Subscribing...';
                     submitBtn.disabled = true;
                     
-                    // Let the form submit naturally to Formspree
-                    // Formspree will handle the response
+                    // Submit via AJAX to Formspree
+                    submitFormToFormspree(emailForm, 'https://formspree.io/f/myzdvwpo', function(success) {
+                        // Reset button state
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        
+                        if (success) {
+                            showToast('Successfully subscribed to our newsletter!');
+                            emailForm.reset(); // Clear the form
+                        } else {
+                            showToast('Sorry, there was an error subscribing. Please try again.');
+                        }
+                    });
+                });
+            }
+            
+            // AJAX form submission function
+            function submitFormToFormspree(form, formspreeUrl, callback) {
+                const formData = new FormData(form);
+                
+                fetch(formspreeUrl, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        callback(true);
+                    } else {
+                        callback(false);
+                    }
+                })
+                .catch(error => {
+                    console.error('Form submission error:', error);
+                    callback(false);
                 });
             }
             
