@@ -1,10 +1,10 @@
-# μ-lytics
+# Mulytics
 
 A professional website for bioinformatics and biostatistics consulting services.
 
 ## Overview
 
-μ-lytics is a consulting company specializing in bioinformatics, biostatistics, and custom application development for biological research. This website showcases our services, research publications, and developed applications.
+Mulytics is a consulting company specializing in bioinformatics, biostatistics, and custom application development for biological research. This website showcases our services, research publications, and developed applications.
 
 ## Features
 
@@ -149,12 +149,12 @@ Forms are configured to use Formspree with the endpoint `https://formspree.io/f/
 
 ## License
 
-© 2025 μ-lytics. All rights reserved.
+© 2025 Mulytics. All rights reserved.
 
 ## Contact
 
 - **Website**: [mulytics.net](https://mulytics.net)
-- **LinkedIn**: [μ-lytics](https://www.linkedin.com/company/mulytics/)
+- **LinkedIn**: [Mulytics](https://www.linkedin.com/company/mulytics/)
 - **Email**: Contact through the website form
 
 ## Contributing
