@@ -25,43 +25,37 @@
                 <nav class="main-nav">
                     <ul class="nav-menu">
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link">Products</a>
+                            <a href="#services" class="nav-link">Services</a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Analytics Dashboard</a></li>
-                                <li><a href="#">Data Visualization</a></li>
-                                <li><a href="#">Reporting Tools</a></li>
-                                <li><a href="#">API Platform</a></li>
+                                <li><a href="#bioinformatics">Bioinformatics</a></li>
+                                <li><a href="#biostatistics">Biostatistics</a></li>
+                                <li><a href="#app-building">App Building</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a href="#" class="nav-link">Solutions</a></li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link">Resources</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Documentation</a></li>
-                                <li><a href="#">Tutorials</a></li>
-                                <li><a href="#">Case Studies</a></li>
-                                <li><a href="#">Blog</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link">Company</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
+                        <li class="nav-item"><a href="#apps" class="nav-link">Apps</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
                 
                 <div class="nav-actions">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <button class="mobile-menu-toggle">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
                 </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#apps">Apps</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -71,10 +65,10 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Advanced data analytics solutions for modern businesses</h1>
-                    <p class="hero-subtitle">Transform your data into actionable insights with our custom analytics solutions and intuitive visualizations.</p>
+                    <h1>Bioinformatics & Biostatistics Consulting</h1>
+                    <p class="hero-subtitle">Expert consultation and automated analysis for transcriptomics, proteomics, machine learning, and statistical modeling. Transform your biological data into actionable insights.</p>
                     <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary btn-large">Get In Touch</a>
+                        <a href="#contact" class="btn btn-primary btn-large">Schedule Consultation</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -92,34 +86,45 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products-section">
+    <!-- Services Section -->
+    <section id="services" class="products-section">
         <div class="container">
             <div class="section-header">
-                <h2>Comprehensive analytics solutions</h2>
-                <p>Our custom analytics solutions help you make data-driven decisions with confidence.</p>
+                <h2>Our Services</h2>
+                <p>Expert consultation and automated analysis for bioinformatics, biostatistics, and custom application development.</p>
             </div>
             
             <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-category">Analytics</div>
+                <div id="bioinformatics" class="product-card">
+                    <div class="product-category">Bioinformatics</div>
                     <div class="product-content">
                         <div class="product-visual">
                             <div class="placeholder-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                    <path d="M9 9h6v6H9z"/>
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M8 12h8"/>
+                                    <path d="M12 8v8"/>
                                 </svg>
                             </div>
                         </div>
-                        <h3>Real-time Analytics</h3>
-                        <p>Monitor your business metrics in real-time with our advanced analytics dashboard.</p>
-                        <a href="#" class="product-link">Learn more →</a>
+                        <h3>Bioinformatics Analysis</h3>
+                        <p>Comprehensive analysis including transcriptomics, proteomics, QC, alignment, quantification, differential expression, pathway analysis, network analysis, and interactive data visualization.</p>
+                        <ul class="service-list">
+                            <li>Transcriptomics and Proteomics</li>
+                            <li>Quality Control (QC)</li>
+                            <li>Alignment and Mapping</li>
+                            <li>Quantification</li>
+                            <li>Differential Expression Analysis</li>
+                            <li>Pathway Analysis</li>
+                            <li>Network Analysis</li>
+                            <li>Time-series Analysis</li>
+                            <li>Interactive Data Visualization</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <div class="product-category">Visualization</div>
+                <div id="biostatistics" class="product-card">
+                    <div class="product-category">Biostatistics</div>
                     <div class="product-content">
                         <div class="product-visual">
                             <div class="placeholder-icon">
@@ -128,29 +133,40 @@
                                 </svg>
                             </div>
                         </div>
-                        <h3>Data Visualization</h3>
-                        <p>Create stunning charts and graphs that tell your data's story.</p>
-                        <a href="#" class="product-link">Learn more →</a>
+                        <h3>Statistical Analysis</h3>
+                        <p>Advanced statistical methods including machine learning, neural networks, propensity-score matching, marginal effects, and survival analysis.</p>
+                        <ul class="service-list">
+                            <li>Descriptive and Analytical Statistics</li>
+                            <li>Machine Learning</li>
+                            <li>Convolutional Neural Networks</li>
+                            <li>Propensity-Score Matching</li>
+                            <li>Marginal Effects</li>
+                            <li>Survival Analysis</li>
+                            <li>Power Analysis</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <div class="product-category">Reporting</div>
+                <div id="app-building" class="product-card">
+                    <div class="product-category">App Development</div>
                     <div class="product-content">
                         <div class="product-visual">
                             <div class="placeholder-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                    <polyline points="14,2 14,8 20,8"/>
-                                    <line x1="16" y1="13" x2="8" y2="13"/>
-                                    <line x1="16" y1="17" x2="8" y2="17"/>
-                                    <polyline points="10,9 9,9 8,9"/>
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
                                 </svg>
                             </div>
                         </div>
-                        <h3>Automated Reports</h3>
-                        <p>Generate comprehensive reports automatically with customizable templates.</p>
-                        <a href="#" class="product-link">Learn more →</a>
+                        <h3>Custom Applications</h3>
+                        <p>Build automated analysis apps and machine learning analysis applications tailored to your specific research needs.</p>
+                        <ul class="service-list">
+                            <li>Automated Analysis Apps</li>
+                            <li>Machine Learning Analysis Apps</li>
+                            <li>Interactive Dashboards</li>
+                            <li>Custom Web Applications</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -163,44 +179,46 @@
             <div class="features-content">
                 <div class="features-text">
                     <h2>Why choose μ-lytics?</h2>
-                    <p>We've built our platform with modern businesses in mind, focusing on ease of use, powerful features, and reliable performance.</p>
+                    <p>We combine deep expertise in bioinformatics and biostatistics with modern analytical tools to deliver comprehensive solutions for your research needs.</p>
                     
                     <div class="feature-list">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M8 12h8"/>
+                                    <path d="M12 8v8"/>
                                 </svg>
                             </div>
                             <div class="feature-content">
-                                <h3>Lightning Fast</h3>
-                                <p>Process millions of data points in seconds with our optimized engine.</p>
+                                <h3>Expert Analysis</h3>
+                                <p>Deep expertise in bioinformatics, biostatistics, and machine learning with published research.</p>
                             </div>
                         </div>
                         
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                                    <circle cx="12" cy="16" r="1"/>
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
                                 </svg>
                             </div>
                             <div class="feature-content">
-                                <h3>Enterprise Security</h3>
-                                <p>Bank-level security with end-to-end encryption and compliance standards.</p>
+                                <h3>Custom Applications</h3>
+                                <p>Build tailored analysis applications and interactive dashboards for your specific research needs.</p>
                             </div>
                         </div>
                         
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                                    <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
                                 </svg>
                             </div>
                             <div class="feature-content">
-                                <h3>Easy Integration</h3>
-                                <p>Connect with your existing tools through our comprehensive API.</p>
+                                <h3>Advanced Methods</h3>
+                                <p>State-of-the-art statistical methods including propensity-score matching, neural networks, and survival analysis.</p>
                             </div>
                         </div>
                     </div>
@@ -209,26 +227,20 @@
                 <div class="features-visual">
                     <div class="dashboard-preview">
                         <div class="dashboard-header">
-                            <div class="dashboard-title">Analytics Dashboard</div>
-                            <div class="dashboard-controls">
-                                <div class="control-btn"></div>
-                                <div class="control-btn"></div>
-                                <div class="control-btn"></div>
-                            </div>
+                            <div class="dashboard-title">Bioinformatics Analysis</div>
                         </div>
                         <div class="dashboard-content">
                             <div class="metric-card">
-                                <div class="metric-value">1,234</div>
-                                <div class="metric-label">Total Users</div>
+                                <div class="metric-value">4</div>
+                                <div class="metric-label">Papers Published</div>
                             </div>
                             <div class="metric-card">
-                                <div class="metric-value">98.5%</div>
-                                <div class="metric-label">Uptime</div>
+                                <div class="metric-value">3</div>
+                                <div class="metric-label">Apps Developed</div>
                             </div>
-                            <div class="chart-area">
-                                <div class="mini-chart">
-                                    <div class="chart-line"></div>
-                                </div>
+                            <div class="metric-card">
+                                <div class="metric-value">3</div>
+                                <div class="metric-label">Service Areas</div>
                             </div>
                         </div>
                     </div>
@@ -237,50 +249,147 @@
         </div>
     </section>
 
-    <!-- Use Cases Section -->
-    <section class="use-cases-section">
+    <!-- Publications Section -->
+    <section id="publications" class="use-cases-section">
         <div class="container">
             <div class="section-header">
-                <h2>Trusted by teams across industries</h2>
-                <p>See how different teams use μ-lytics to drive their business forward.</p>
+                <h2>Research Publications</h2>
+                <p>Our published research in biological network analysis, statistical methods, and machine learning applications.</p>
             </div>
             
-            <div class="use-cases-grid">
-                <div class="use-case-card">
-                    <div class="use-case-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 21h18"/>
-                            <path d="M5 21V7l8-4v18"/>
-                            <path d="M19 21V11l-6-4"/>
-                        </svg>
-                    </div>
-                    <h3>Enterprise</h3>
-                    <p>Large organizations rely on our platform for comprehensive business intelligence and reporting.</p>
+            <div class="publications-grid">
+                <div class="publication-card">
+                    <div class="publication-category">Biological Network Analysis</div>
+                    <h3>Biological Network Analysis Research</h3>
+                    <p>Advanced methods for analyzing biological networks and their applications in neuroscience research.</p>
+                    <a href="https://link.springer.com/article/10.1186/s12974-024-03316-z" target="_blank" class="btn btn-outline btn-small">View Publication →</a>
                 </div>
                 
-                <div class="use-case-card">
-                    <div class="use-case-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-                            <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-                        </svg>
-                    </div>
-                    <h3>Startups</h3>
-                    <p>Fast-growing companies use our tools to scale their analytics without the complexity.</p>
+                <div class="publication-card">
+                    <div class="publication-category">Propensity-Score Matching</div>
+                    <h3>Propensity-Score Matching Studies</h3>
+                    <p>Statistical methods for causal inference using propensity-score matching in medical research.</p>
+                    <a href="https://jnis.bmj.com/content/17/e1/e102.abstract" target="_blank" class="btn btn-outline btn-small">View Publication →</a>
                 </div>
                 
-                <div class="use-case-card">
-                    <div class="use-case-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <circle cx="12" cy="12" r="6"/>
-                            <circle cx="12" cy="12" r="2"/>
-                        </svg>
+                <div class="publication-card">
+                    <div class="publication-category">Marginal Effects</div>
+                    <h3>Marginal Effects Analysis</h3>
+                    <p>Advanced statistical techniques for analyzing marginal effects in complex datasets.</p>
+                    <a href="https://jnis.bmj.com/content/early/2025/07/18/jnis-2025-023421.abstract" target="_blank" class="btn btn-outline btn-small">View Publication →</a>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-category">Machine Learning</div>
+                    <h3>Neural Network Applications</h3>
+                    <p>Artificial neural network models for predictive analysis in medical applications.</p>
+                    <a href="https://journals.lww.com/neurosurgery/abstract/2024/04000/an_artificial_neural_network_model_for_predicting.19.aspx?context=featuredarticles&collectionid=52" target="_blank" class="btn btn-outline btn-small">View Publication →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="use-cases-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Developed Applications</h2>
+                <p>Interactive web applications for automated analysis and prediction modeling.</p>
+            </div>
+            
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-category">Medical Prediction</div>
+                    <h3>Postoperative Facial Nerve Prediction</h3>
+                    <p>Machine learning application for predicting postoperative facial nerve function in skull base surgery.</p>
+                    <a href="https://emoryskullbase.shinyapps.io/postoperative_FN_prediction/" target="_blank" class="btn btn-outline btn-small">Launch App →</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-category">Surgical Planning</div>
+                    <h3>Giant Pituitary Adenoma Resection</h3>
+                    <p>Interactive tool for planning and analyzing giant pituitary adenoma resection procedures.</p>
+                    <a href="https://emoryskullbase.shinyapps.io/giant_pituitary_adenoma_resection/" target="_blank" class="btn btn-outline btn-small">Launch App →</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-category">Pediatric Analysis</div>
+                    <h3>CHOA TBI Analysis</h3>
+                    <p>Comprehensive analysis tool for traumatic brain injury data in pediatric populations.</p>
+                    <a href="https://coremory.shinyapps.io/choa_tbi/" target="_blank" class="btn btn-outline btn-small">Launch App →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Ready to transform your biological data into actionable insights? Let's discuss your project and how we can help.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h3>Schedule a Consultation</h3>
+                            <p>Book a consultation to discuss your bioinformatics or biostatistics needs.</p>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <h3>Email Collection</h3>
+                            <p>Stay updated with our latest research and services.</p>
+                        </div>
                     </div>
-                    <h3>Marketing</h3>
-                    <p>Marketing teams track campaigns and measure ROI with our specialized analytics tools.</p>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="consultationForm" action="https://formspree.io/f/myzdvwpo" method="POST">
+                        <h3>Schedule Consultation</h3>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="topic">Topic *</label>
+                            <select id="topic" name="topic" required>
+                                <option value="">Select a topic</option>
+                                <option value="bioinformatics">Bioinformatics Analysis</option>
+                                <option value="biostatistics">Biostatistics</option>
+                                <option value="app-development">App Development</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please describe your project or research needs..." required></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="New Consultation Request from Mulytics Website">
+                        <input type="hidden" name="_next" value="?success=true">
+                        
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
+                    
+                    <form class="contact-form" id="emailForm" action="https://formspree.io/f/myzdvwpo" method="POST">
+                        <h3>Stay Updated</h3>
+                        <div class="form-group">
+                            <label for="newsletter-email">Email Address *</label>
+                            <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="New Newsletter Subscription from Mulytics Website">
+                        <input type="hidden" name="_next" value="?success=true">
+                        
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -290,10 +399,10 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to get started?</h2>
-                <p>Let's discuss how we can help transform your data into actionable insights.</p>
+                <h2>Ready to advance your research?</h2>
+                <p>Let's discuss how our bioinformatics and biostatistics expertise can help accelerate your research and analysis.</p>
                 <div class="cta-actions">
-                    <a href="#contact" class="btn btn-primary btn-large">Get In Touch</a>
+                    <a href="#contact" class="btn btn-primary btn-large">Schedule Consultation</a>
                 </div>
             </div>
         </div>
@@ -304,41 +413,38 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Product</h4>
+                    <h4>Services</h4>
                     <ul>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">API</a></li>
-                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#bioinformatics">Bioinformatics</a></li>
+                        <li><a href="#biostatistics">Biostatistics</a></li>
+                        <li><a href="#app-building">App Development</a></li>
+                        <li><a href="#contact">Consultation</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Company</h4>
+                    <h4>Research</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#apps">Applications</a></li>
+                        <li><a href="#contact">Collaboration</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Status</a></li>
+                        <li><a href="https://link.springer.com/article/10.1186/s12974-024-03316-z" target="_blank">Network Analysis</a></li>
+                        <li><a href="https://jnis.bmj.com/content/17/e1/e102.abstract" target="_blank">Propensity Matching</a></li>
+                        <li><a href="https://journals.lww.com/neurosurgery/abstract/2024/04000/an_artificial_neural_network_model_for_predicting.19.aspx" target="_blank">Machine Learning</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Connect</h4>
                     <div class="social-links">
-                        <a href="#" class="social-link">Twitter</a>
-                        <a href="https://www.linkedin.com/company/mulytics/" class="social-link">LinkedIn</a>
-                        <a href="#" class="social-link">GitHub</a>
+                        <a href="https://www.linkedin.com/company/mulytics/" target="_blank" class="social-link">LinkedIn</a>
+                        <a href="#contact" class="social-link">Contact</a>
                     </div>
                 </div>
             </div>
@@ -352,5 +458,37 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenuToggle.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                });
+                
+                // Close mobile menu when clicking on a link
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
