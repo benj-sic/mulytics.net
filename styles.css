@@ -369,6 +369,7 @@ p {
     right: 0;
     bottom: 0;
     pointer-events: none;
+    z-index: 10;
 }
 
 .y-axis {
@@ -430,6 +431,10 @@ p {
     width: 50px;
     border-radius: 4px 4px 0 0;
     transition: all 0.3s ease;
+}
+
+.chart-bar:hover {
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(139, 92, 246, 0.6));
 }
 
 .chart-bar-1 {
