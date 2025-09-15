@@ -56,12 +56,12 @@
                         </li>
                         <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
                         <li class="nav-item"><a href="#apps" class="nav-link">Apps</a></li>
-                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Newsletter</a></li>
                     </ul>
                 </nav>
                 
                 <div class="nav-actions">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#consultation" class="btn btn-primary">Get In Touch</a>
                     <button class="mobile-menu-toggle" id="mobileMenuToggle">
                         <span></span>
                         <span></span>
@@ -76,7 +76,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#apps">Apps</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Newsletter</a></li>
                 </ul>
             </div>
         </div>
@@ -90,7 +90,7 @@
                     <h1>Bioinformatics & Biostatistics Consulting</h1>
                     <p class="hero-subtitle">Expert consultation and automated analysis for transcriptomics, proteomics, machine learning, and statistical modeling. Transform your biological data into actionable insights.</p>
                     <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary btn-large">Schedule Consultation</a>
+                        <a href="#consultation" class="btn btn-primary btn-large">Schedule Consultation</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -222,7 +222,54 @@
             </div>
             
             <div class="services-cta">
-                <p>Need something specific? We offer custom services tailored to your unique research needs. <a href="#contact">Ask us about your project</a>.</p>
+                <p>Need something specific? We offer custom services tailored to your unique research needs. <a href="#consultation">Ask us about your project</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Request Section -->
+    <section id="consultation" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Schedule a Consultation</h2>
+                    <p>Ready to transform your biological data into actionable insights? Let's discuss your project and how we can help.</p>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="consultationForm">
+                        <h3>Schedule Consultation</h3>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="topic">Topic *</label>
+                            <select id="topic" name="topic" required>
+                                <option value="">Select a topic</option>
+                                <option value="bioinformatics">Bioinformatics Analysis</option>
+                                <option value="biostatistics">Biostatistics</option>
+                                <option value="app-development">App Development</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please describe your project or research needs..." required></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="New Consultation Request from Mulytics Website">
+                        
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -375,63 +422,18 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Newsletter Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <p>Ready to transform your biological data into actionable insights? Let's discuss your project and how we can help.</p>
-                    
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <h3>Schedule a Consultation</h3>
-                            <p>Book a consultation to discuss your bioinformatics or biostatistics needs.</p>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <h3>Email Collection</h3>
-                            <p>Stay updated with our latest research and services.</p>
-                        </div>
-                    </div>
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter to stay informed about our latest research, publications, and services.</p>
                 </div>
                 
                 <div class="contact-form-container">
-                    <form class="contact-form" id="consultationForm">
-                        <h3>Schedule Consultation</h3>
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="topic">Topic *</label>
-                            <select id="topic" name="topic" required>
-                                <option value="">Select a topic</option>
-                                <option value="bioinformatics">Bioinformatics Analysis</option>
-                                <option value="biostatistics">Biostatistics</option>
-                                <option value="app-development">App Development</option>
-                                <option value="consultation">General Consultation</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Please describe your project or research needs..." required></textarea>
-                        </div>
-                        
-                        <input type="hidden" name="_subject" value="New Consultation Request from Mulytics Website">
-                        
-                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
-                    </form>
-                    
                     <form class="contact-form" id="emailForm">
-                        <h3>Stay Updated</h3>
+                        <h3>Newsletter Subscription</h3>
                         <div class="form-group">
                             <label for="newsletter-name">Name *</label>
                             <input type="text" id="newsletter-name" name="newsletter-name" placeholder="Enter your name" required>
@@ -442,9 +444,19 @@
                             <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Enter your email" required>
                         </div>
                         
+                        <div class="form-group">
+                            <label for="newsletter-institution">Institution/Company</label>
+                            <input type="text" id="newsletter-institution" name="newsletter-institution" placeholder="e.g., University of California, TechCorp Inc.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newsletter-position">Position/Role</label>
+                            <input type="text" id="newsletter-position" name="newsletter-position" placeholder="e.g., PhD Student, Research Scientist, Professor">
+                        </div>
+                        
                         <input type="hidden" name="_subject" value="New Newsletter Subscription from Mulytics Website">
                         
-                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                 </div>
             </div>
@@ -458,7 +470,7 @@
                 <h2>Ready to advance your research?</h2>
                 <p>Let's discuss how our bioinformatics and biostatistics expertise can help accelerate your research and analysis.</p>
                 <div class="cta-actions">
-                    <a href="#contact" class="btn btn-primary btn-large">Schedule Consultation</a>
+                    <a href="#consultation" class="btn btn-primary btn-large">Schedule Consultation</a>
                 </div>
             </div>
         </div>
@@ -474,7 +486,7 @@
                         <li><a href="#bioinformatics">Bioinformatics</a></li>
                         <li><a href="#biostatistics">Biostatistics</a></li>
                         <li><a href="#app-building">App Development</a></li>
-                        <li><a href="#contact">Consultation</a></li>
+                        <li><a href="#consultation">Consultation</a></li>
                     </ul>
                 </div>
                 
@@ -483,7 +495,7 @@
                     <ul>
                         <li><a href="#publications">Publications</a></li>
                         <li><a href="#apps">Applications</a></li>
-                        <li><a href="#contact">Collaboration</a></li>
+                        <li><a href="#consultation">Collaboration</a></li>
                     </ul>
                 </div>
                 
@@ -500,7 +512,7 @@
                     <h4>Connect</h4>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/company/mulytics/" target="_blank" class="social-link">LinkedIn</a>
-                        <a href="#contact" class="social-link">Contact</a>
+                        <a href="#consultation" class="social-link">Contact</a>
                     </div>
                 </div>
             </div>
@@ -604,7 +616,7 @@
                     submitBtn.disabled = true;
                     
                     // Submit via AJAX to Formspree
-                    submitFormToFormspree(emailForm, 'https://formspree.io/f/myzdvwpo', function(success) {
+                    submitFormToFormspree(emailForm, 'https://formspree.io/f/xvgbnqdd', function(success) {
                         // Reset button state
                         submitBtn.textContent = originalText;
                         submitBtn.disabled = false;
